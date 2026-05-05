@@ -169,4 +169,4 @@ elif (Tipo_Simulacion=="delta_r"):
     for d in deltas_r:
         avg_repair[d] /= num_simulations
 
-    np.save('Prueba2.npy',avg_repair) ## GUARDAR DATOS
+    np.save('F_Estocastica_deltas.npy',avg_repair) ## GUARDAR DATOS
