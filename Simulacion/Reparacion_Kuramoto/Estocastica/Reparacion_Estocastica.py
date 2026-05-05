@@ -114,7 +114,7 @@ T_repair = 20000
 
 if (Tipo_Simulacion==1):
     delta_r = 0.01
-    betas = np.array([-2.0, 2.0])
+    betas = np.array([-1.0, 0.0, 1.0])
 
     beta_config = {
     -1: ("Débiles primero",  "steelblue","--" ),
