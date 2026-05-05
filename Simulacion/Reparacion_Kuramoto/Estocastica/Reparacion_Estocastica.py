@@ -98,44 +98,74 @@ def Simulacion_repair(A, Omega_damage, T_repair, delta_r, beta):
 
 
 # ---------------------------------------- CARGAR datos ----------------------------------------
-Omega_damage_array = np.load('Omega_damage_list.npy')
+Omega_damage_array = np.load('../Omega_damage_list.npy')
 Omega_damage_list = [Omega_damage_array[i] for i in range(Omega_damage_array.shape[0])]
-A = np.load('A_origin.npy')
+A = np.load('../A_origin.npy')
 G = nx.from_numpy_array(A)
+
 
 
 # ---------------------------------------- SIMULACION ----------------------------------------
 
+Tipo_Simulacion=1
 # --- PARÁMETROS ---
-num_simulations = 1000
+num_simulations = 1
 T_repair = 20000
-delta_r = 0.01
-betas = np.array([-2.0, 2.0])
 
-beta_config = {
-    -2: ("Débiles primero",  "steelblue"),
-     2: ("Fuertes primero",  "tomato"),
-}
+if (Tipo_Simulacion==1):
+    delta_r = 0.01
+    betas = np.array([-2.0, 2.0])
 
-# --- ACUMULADORES ---
-avg_repair = {b: np.zeros(T_repair + 1) for b in betas}
+    beta_config = {
+    -1: ("Débiles primero",  "steelblue","--" ),
+     0: ("Uniforme",         "goldenrod","-"),
+     1: ("Fuertes primero",  "tomato","-."),
+    }
 
-start_time_total = time.time()
+    # --- ACUMULADORES ---
+    avg_repair = {b: np.zeros(T_repair + 1) for b in betas}
 
-# --- BUCLE DE SIMULACIONES ---
-for sim in range(num_simulations):
+    start_time_total = time.time()
+
+    # --- BUCLE DE SIMULACIONES ---
+    for sim in range(num_simulations):
+        for b in betas:
+            f_repair, _ = Simulacion_repair(A, Omega_damage_list[2], T_repair, delta_r, b)
+            avg_repair[b] += f_repair
+
+        if (sim + 1) % 5 == 0:
+            print(f"  Simulación {sim+1}/{num_simulations} lista.")
+            print(f"\n--- Tiempo parcial: {(time.time() - start_time_total)/60:.2f} minutos ---")
+
+    # --- PROMEDIOS ---
     for b in betas:
-        f_repair, _ = Simulacion_repair(A, Omega_damage_list[2], T_repair, delta_r, b)
-        avg_repair[b] += f_repair
+        avg_repair[b] /= num_simulations
 
-    if (sim + 1) % 5 == 0:
-        print(f"  Simulación {sim+1}/{num_simulations} lista.")
-        print(f"\n--- Tiempo parcial: {(time.time() - start_time_total)/60:.2f} minutos ---")
+    print(f"\n--- Tiempo total: {(time.time() - start_time_total)/60:.2f} minutos ---")
 
-# --- PROMEDIOS ---
-for b in betas:
-    avg_repair[b] /= num_simulations
+    np.save('Prueba1.npy',avg_repair) ## GUARDAR DATOS
 
-print(f"\n--- Tiempo total: {(time.time() - start_time_total)/60:.2f} minutos ---")
+elif (Tipo_Simulacion==2):
+    beta = 1
+    deltas_r = np.array([0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1])
 
-np.save('F_Estocastica2.npy',avg_repair) ## GUARDAR DATOS
+    # --- ACUMULADORES ---
+    avg_repair = {d: np.zeros(T_repair + 1) for d in deltas_r}
+
+    start_time_total = time.time()
+
+    # --- BUCLE DE SIMULACIONES ---
+    for sim in range(num_simulations):
+        for d in deltas_r:
+            f_repair, _ = Simulacion_repair(A, Omega_damage_list[2], T_repair, d, beta)
+            avg_repair[d] += f_repair
+
+        if (sim + 1) % 10 == 0:
+            print(f"  Simulación {sim+1}/{num_simulations} lista.")
+            print(f"\n--- Tiempo total: {(time.time() - start_time_total)/60:.2f} minutos ---")
+
+    # --- PROMEDIOS ---
+    for d in deltas_r:
+        avg_repair[d] /= num_simulations
+
+    np.save('Prueba2.npy',avg_repair) ## GUARDAR DATOS
