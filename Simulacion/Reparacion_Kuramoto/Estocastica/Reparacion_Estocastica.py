@@ -107,12 +107,13 @@ G = nx.from_numpy_array(A)
 
 # ---------------------------------------- SIMULACION ----------------------------------------
 
-Tipo_Simulacion=1
+Tipo_Simulacion="delta_r"
+#Tipo_Simulacion="betas"
 # --- PARÁMETROS ---
 num_simulations = 1
 T_repair = 20000
 
-if (Tipo_Simulacion==1):
+if (Tipo_Simulacion=="betas"):
     delta_r = 0.01
     betas = np.array([-1.0, 0.0, 1.0])
 
@@ -145,7 +146,7 @@ if (Tipo_Simulacion==1):
 
     np.save('Prueba1.npy',avg_repair) ## GUARDAR DATOS
 
-elif (Tipo_Simulacion==2):
+elif (Tipo_Simulacion=="delta_r"):
     beta = 1
     deltas_r = np.array([0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1])
 
