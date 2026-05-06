@@ -109,8 +109,9 @@ G = nx.from_numpy_array(A)
 
 Tipo_Simulacion="delta_r"
 #Tipo_Simulacion="betas"
+
 # --- PARÁMETROS ---
-num_simulations = 1
+num_simulations = 1000
 T_repair = 20000
 
 if (Tipo_Simulacion=="betas"):
@@ -163,10 +164,12 @@ elif (Tipo_Simulacion=="delta_r"):
 
         if (sim + 1) % 10 == 0:
             print(f"  Simulación {sim+1}/{num_simulations} lista.")
-            print(f"\n--- Tiempo total: {(time.time() - start_time_total)/60:.2f} minutos ---")
+            print(f"\n--- Tiempo parcial: {(time.time() - start_time_total)/60:.2f} minutos ---")
 
     # --- PROMEDIOS ---
     for d in deltas_r:
         avg_repair[d] /= num_simulations
+
+    print(f"\n--- Tiempo total: {(time.time() - start_time_total)/60:.2f} minutos ---")
 
     np.save('F_Estocastica_deltas.npy',avg_repair) ## GUARDAR DATOS
