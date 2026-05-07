@@ -114,11 +114,11 @@ G = nx.from_numpy_array(A)
 # ---------------------------------------- SIMULACION ----------------------------------------
 
 Tipo_Simulacion="delta_r"
-#Tipo_Simulacion="constante"
+#Tipo_Simulacion="strategy"
 
 # --- PARÁMETROS ---
 
-if(Tipo_Simulacion=="constante"):
+if(Tipo_Simulacion=="strategy"):
     T_repair = 20000
     delta_r = 0.01
     strategies = ['best', 'worst']
@@ -134,18 +134,18 @@ if(Tipo_Simulacion=="constante"):
     start_time_total = time.time()
 
     # --- BUCLE DE SIMULACIONES ---
-    for sim, Omega_damage in enumerate(Omega_damage_list[0:1]):
+    for sim, Omega_damage in enumerate(Omega_damage_list):
         for s in strategies:
             f_repair, _ = Simulacion_repair_deterministic(A, Omega_damage, T_repair, delta_r, strategy=s)
             avg_repair[s] += f_repair
 
         if (sim + 1) % 10 == 0:
-            print(f"  Simulación {sim+1}/{len(Omega_damage_list[0:1])} lista.")
-            print(f"\n--- Tiempo parcial: {(time.time() - start_time_total)/60:.2f} minutos ---")
+            print(f"\n --- Simulación {sim+1}/{len(Omega_damage_list)} lista. ---")
+            print(f"--- Tiempo parcial: {(time.time() - start_time_total)/60:.2f} minutos ---")
 
     # --- PROMEDIOS ---
     for s in strategies:
-        avg_repair[s] /= len(Omega_damage_list[0:1])
+        avg_repair[s] /= len(Omega_damage_list)
 
     print(f"\n--- Tiempo total: {(time.time() - start_time_total)/60:.2f} minutos ---")
 
@@ -161,18 +161,18 @@ elif(Tipo_Simulacion=="delta_r"):
     start_time_total = time.time()
 
     # --- BUCLE DE SIMULACIONES ---
-    for sim, Omega_damage in enumerate(Omega_damage_list[0:1]):
+    for sim, Omega_damage in enumerate(Omega_damage_list):
         for d in deltas_r:
             f_repair, _ = Simulacion_repair_deterministic(A, Omega_damage, T_repair, d, strategy='best')
             avg_repair[d] += f_repair
 
         if (sim + 1) % 10 == 0:
-            print(f"  Simulación {sim+1}/{len(Omega_damage_list[0:1])} lista.")
-            print(f"\n--- Tiempo parcial: {(time.time() - start_time_total)/60:.2f} minutos ---")
+            print(f"\n --- Simulación {sim+1}/{len(Omega_damage_list)} lista. ---")
+            print(f"--- Tiempo parcial: {(time.time() - start_time_total)/60:.2f} minutos ---")
 
     # --- PROMEDIOS ---
     for d in deltas_r:
-        avg_repair[d] /= len(Omega_damage_list[0:1])
+        avg_repair[d] /= len(Omega_damage_list)
 
     print(f"\n--- Tiempo total: {(time.time() - start_time_total)/60:.2f} minutos ---")
 
