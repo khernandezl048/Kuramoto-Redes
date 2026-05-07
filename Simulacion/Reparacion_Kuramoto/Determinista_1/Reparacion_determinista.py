@@ -163,7 +163,7 @@ elif(Tipo_Simulacion=="delta_r"):
     # --- BUCLE DE SIMULACIONES ---
     for sim, Omega_damage in enumerate(Omega_damage_list):
         for d in deltas_r:
-            f_repair, _ = Simulacion_repair_deterministic(A, Omega_damage, T_repair, d, strategy='best')
+            f_repair, _ = Simulacion_repair_deterministic(A, Omega_damage, T_repair, d, strategy='worst')
             avg_repair[d] += f_repair
 
         if (sim + 1) % 10 == 0:
