@@ -135,7 +135,7 @@ Tipo_Simulacion="delta_r"
 
 if(Tipo_Simulacion=="strategy"):
     # --- PARÁMETROS ---
-    T_repair = 10000
+    T_repair = 20000
     delta_r = 0.01
     strategies = ['best', 'worst']
 
@@ -181,7 +181,7 @@ elif(Tipo_Simulacion=="delta_r"):
     # --- BUCLE DE SIMULACIONES ---
     for sim, Omega_damage in enumerate(Omega_damage_list):
         for d in deltas_r:
-            f_repair, _, _ = Simulacion_repair_deterministic(A, Omega_damage, T_repair, d, strategy='worst')
+            f_repair, _, _ = Simulacion_repair_deterministic(A, Omega_damage, T_repair, d, strategy='best')
             avg_repair[d] += f_repair
 
         if (sim + 1) % 10 == 0:
@@ -194,5 +194,5 @@ elif(Tipo_Simulacion=="delta_r"):
 
     print(f"\n--- Tiempo total: {(time.time() - start_time_total)/60:.2f} minutos ---")
 
-    np.save('F_Deterministic_deltar_enlace.npy',avg_repair) ## GUARDAR DATOS
+    np.save('F_Deterministic_deltar_enlace_best.npy',avg_repair) ## GUARDAR DATOS
 

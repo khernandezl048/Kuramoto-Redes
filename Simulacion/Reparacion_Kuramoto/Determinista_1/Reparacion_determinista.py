@@ -176,4 +176,4 @@ elif(Tipo_Simulacion=="delta_r"):
 
     print(f"\n--- Tiempo total: {(time.time() - start_time_total)/60:.2f} minutos ---")
 
-    np.save('F_Deterministic_deltar.npy',avg_repair) ## GUARDAR DATOS
+    np.save('F_Deterministic_deltar_worst.npy',avg_repair) ## GUARDAR DATOS
