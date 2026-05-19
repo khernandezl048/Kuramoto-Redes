@@ -111,7 +111,7 @@ G = nx.from_numpy_array(A)
 Tipo_Simulacion="betas"
 
 # --- PARÁMETROS ---
-num_simulations = 1000
+num_simulations = 1
 T_repair = 20000
 
 if (Tipo_Simulacion=="betas"):
