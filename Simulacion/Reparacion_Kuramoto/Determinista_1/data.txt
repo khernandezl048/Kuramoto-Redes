@@ -281,22 +281,23 @@ nohup: ignoring input
 
  --- Simulación 940/1000 lista. ---
 --- Tiempo parcial: 677.48 minutos ---
+
  --- Simulación 950/1000 lista. ---
---- Tiempo parcial: 619.35 minutos ---
+--- Tiempo parcial: 687.53 minutos ---
 
  --- Simulación 960/1000 lista. ---
---- Tiempo parcial: 626.14 minutos ---
+--- Tiempo parcial: 697.59 minutos ---
 
  --- Simulación 970/1000 lista. ---
---- Tiempo parcial: 632.96 minutos ---
+--- Tiempo parcial: 707.57 minutos ---
 
  --- Simulación 980/1000 lista. ---
---- Tiempo parcial: 639.76 minutos ---
+--- Tiempo parcial: 717.64 minutos ---
 
  --- Simulación 990/1000 lista. ---
---- Tiempo parcial: 646.55 minutos ---
+--- Tiempo parcial: 727.91 minutos ---
 
  --- Simulación 1000/1000 lista. ---
---- Tiempo parcial: 653.35 minutos ---
+--- Tiempo parcial: 737.98 minutos ---
 
---- Tiempo total: 653.35 minutos ---
+--- Tiempo total: 737.98 minutos ---

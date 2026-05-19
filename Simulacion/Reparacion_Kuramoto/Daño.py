@@ -144,7 +144,8 @@ for sim in range(num_simulations):
     Omega_damage_list.append(Omega_damage)
 
     if (sim + 1) % 10 == 0:
-        print(f"  Simulación {sim+1}/{num_simulations} lista.")
+        print(f"\n Simulación {sim+1}/{num_simulations} lista.")
+        print(f"--- Tiempo Parcial: {(time.time() - start_time_total)/60:.2f} minutos ---")
 
 print(f"\n--- Tiempo total: {(time.time() - start_time_total)/60:.2f} minutos ---")
 
