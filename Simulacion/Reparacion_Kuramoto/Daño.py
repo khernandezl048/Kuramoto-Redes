@@ -130,7 +130,7 @@ def Two_Communities_random(n, p):
 # --- PARÁMETROS ---
 num_simulations = 1000
 alpha_damage = 1.0
-T_Max = 100000
+T_Max = 30000
 N = 10
 G = Two_Communities_random(N, 0.1)
 A = nx.to_numpy_array(G)
