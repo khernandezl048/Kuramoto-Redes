@@ -107,21 +107,23 @@ G = nx.from_numpy_array(A)
 
 # ---------------------------------------- SIMULACION ----------------------------------------
 
-Tipo_Simulacion="delta_r"
-#Tipo_Simulacion="betas"
+#Tipo_Simulacion="delta_r"
+Tipo_Simulacion="betas"
 
 # --- PARÁMETROS ---
-num_simulations = 1
+num_simulations = 1000
 T_repair = 20000
 
 if (Tipo_Simulacion=="betas"):
     delta_r = 0.01
-    betas = np.array([-1.0, 0.0, 1.0])
+    betas = np.array([-2, -1, 0, 1, 2])
 
     beta_config = {
-    -1: ("Débiles primero",  "steelblue","--" ),
-     0: ("Uniforme",         "goldenrod","-"),
-     1: ("Fuertes primero",  "tomato","-."),
+    -2: ("Muy débiles primero", "navy", ":", 1.8),
+    -1: ("Débiles primero",     "steelblue", "--", 1.8),
+     0: ("Uniforme",            "goldenrod", "-", 1.8),
+     1: ("Fuertes primero",     "tomato", "-.", 1.8),
+     2: ("Muy fuertes primero", "darkred", "-.", 2.5)
     }
 
     # --- ACUMULADORES ---
@@ -136,8 +138,8 @@ if (Tipo_Simulacion=="betas"):
             avg_repair[b] += f_repair
 
         if (sim + 1) % 5 == 0:
-            print(f"  Simulación {sim+1}/{num_simulations} lista.")
-            print(f"\n--- Tiempo parcial: {(time.time() - start_time_total)/60:.2f} minutos ---")
+            print(f"\n  Simulación {sim+1}/{num_simulations} lista.")
+            print(f"--- Tiempo parcial: {(time.time() - start_time_total)/60:.2f} minutos ---")
 
     # --- PROMEDIOS ---
     for b in betas:
@@ -145,25 +147,22 @@ if (Tipo_Simulacion=="betas"):
 
     print(f"\n--- Tiempo total: {(time.time() - start_time_total)/60:.2f} minutos ---")
 
-    np.save('Prueba1.npy',avg_repair) ## GUARDAR DATOS
+    np.save('F_Estocastica_betas.npy',avg_repair) ## GUARDAR DATOS
 
 elif (Tipo_Simulacion=="delta_r"):
     beta = 1
-    deltas_r = np.array([0.01])
-    #deltas_r = np.array([0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1])
+    deltas_r = np.array([0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1])
 
     # --- ACUMULADORES ---
     avg_repair = {d: np.zeros(T_repair + 1) for d in deltas_r}
-    avg_repair_Omega = {d: np.zeros_like(A, dtype=float)for d in deltas_r}
 
     start_time_total = time.time()
 
     # --- BUCLE DE SIMULACIONES ---
     for sim in range(num_simulations):
         for d in deltas_r:
-            f_repair, Omega_Final = Simulacion_repair(A, Omega_damage_list[2], T_repair, d, beta)
+            f_repair, _ = Simulacion_repair(A, Omega_damage_list[2], T_repair, d, beta)
             avg_repair[d] += f_repair
-            avg_repair_Omega[d] += Omega_Final
 
         if (sim + 1) % 10 == 0:
             print(f"  Simulación {sim+1}/{num_simulations} lista.")
@@ -172,9 +171,7 @@ elif (Tipo_Simulacion=="delta_r"):
     # --- PROMEDIOS ---
     for d in deltas_r:
         avg_repair[d] /= num_simulations
-        avg_repair_Omega[d] /= num_simulations
 
     print(f"\n--- Tiempo total: {(time.time() - start_time_total)/60:.2f} minutos ---")
 
     np.save('F_Estocastica_deltas.npy',avg_repair) ## GUARDAR DATOS
-    np.save('Omegas_Evolucion.npy',avg_repair_Omega) ## GUARDAR DATOS
