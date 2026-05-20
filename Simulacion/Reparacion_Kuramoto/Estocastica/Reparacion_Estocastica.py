@@ -107,12 +107,12 @@ G = nx.from_numpy_array(A)
 
 # ---------------------------------------- SIMULACION ----------------------------------------
 
-#Tipo_Simulacion="delta_r"
-Tipo_Simulacion="betas"
+Tipo_Simulacion="delta_r"
+#Tipo_Simulacion="betas"
 
 # --- PARÁMETROS ---
-num_simulations = 1
-T_repair = 20000
+num_simulations = 1000
+T_repair = 25000
 
 if (Tipo_Simulacion=="betas"):
     delta_r = 0.01
@@ -150,7 +150,7 @@ if (Tipo_Simulacion=="betas"):
     np.save('F_Estocastica_betas.npy',avg_repair) ## GUARDAR DATOS
 
 elif (Tipo_Simulacion=="delta_r"):
-    beta = 1
+    beta = -1
     deltas_r = np.array([0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1])
 
     # --- ACUMULADORES ---
