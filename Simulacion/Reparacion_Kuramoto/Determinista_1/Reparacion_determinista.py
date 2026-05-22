@@ -119,7 +119,7 @@ Tipo_Simulacion="delta_r"
 # --- PARÁMETROS ---
 
 if(Tipo_Simulacion=="strategy"):
-    T_repair = 20000
+    T_repair = 25000
     delta_r = 0.01
     strategies = ['best', 'worst']
 
@@ -149,10 +149,10 @@ if(Tipo_Simulacion=="strategy"):
 
     print(f"\n--- Tiempo total: {(time.time() - start_time_total)/60:.2f} minutos ---")
 
-    np.save('F_Deterministic.npy',avg_repair) ## GUARDAR DATOS
+    np.save('F_Deterministic_Strategy.npy',avg_repair) ## GUARDAR DATOS
 
 elif(Tipo_Simulacion=="delta_r"):
-    T_repair = 20000
+    T_repair = 25000
     deltas_r = np.linspace(0.01, 0.1, 10)
 
     # --- ACUMULADORES ---
@@ -163,7 +163,7 @@ elif(Tipo_Simulacion=="delta_r"):
     # --- BUCLE DE SIMULACIONES ---
     for sim, Omega_damage in enumerate(Omega_damage_list):
         for d in deltas_r:
-            f_repair, _ = Simulacion_repair_deterministic(A, Omega_damage, T_repair, d, strategy='worst')
+            f_repair, _ = Simulacion_repair_deterministic(A, Omega_damage, T_repair, d, strategy='best')
             avg_repair[d] += f_repair
 
         if (sim + 1) % 10 == 0:
@@ -176,4 +176,4 @@ elif(Tipo_Simulacion=="delta_r"):
 
     print(f"\n--- Tiempo total: {(time.time() - start_time_total)/60:.2f} minutos ---")
 
-    np.save('F_Deterministic_deltar_worst.npy',avg_repair) ## GUARDAR DATOS
+    np.save('F_Deterministic_deltar_Best.npy',avg_repair) ## GUARDAR DATOS
