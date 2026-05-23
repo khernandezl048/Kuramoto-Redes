@@ -127,7 +127,6 @@ G = nx.from_numpy_array(A)
 
 
 # ---------------------------------------- SIMULACION ----------------------------------------
-
 Tipo_Simulacion="delta_r"
 #Tipo_Simulacion="strategy"
 
@@ -135,7 +134,7 @@ Tipo_Simulacion="delta_r"
 
 if(Tipo_Simulacion=="strategy"):
     # --- PARÁMETROS ---
-    T_repair = 20000
+    T_repair = 25000
     delta_r = 0.01
     strategies = ['best', 'worst']
 
@@ -170,7 +169,7 @@ if(Tipo_Simulacion=="strategy"):
 elif(Tipo_Simulacion=="delta_r"):
 
     # --- PARÁMETROS ---
-    T_repair = 20000
+    T_repair = 25000
     deltas_r = np.linspace(0.01, 0.1, 10)
 
     # --- ACUMULADORES ---
@@ -181,7 +180,7 @@ elif(Tipo_Simulacion=="delta_r"):
     # --- BUCLE DE SIMULACIONES ---
     for sim, Omega_damage in enumerate(Omega_damage_list):
         for d in deltas_r:
-            f_repair, _, _ = Simulacion_repair_deterministic(A, Omega_damage, T_repair, d, strategy='best')
+            f_repair, _, _ = Simulacion_repair_deterministic(A, Omega_damage, T_repair, d, strategy='worst')
             avg_repair[d] += f_repair
 
         if (sim + 1) % 10 == 0:
@@ -194,5 +193,5 @@ elif(Tipo_Simulacion=="delta_r"):
 
     print(f"\n--- Tiempo total: {(time.time() - start_time_total)/60:.2f} minutos ---")
 
-    np.save('F_Deterministic_deltar_enlace_best.npy',avg_repair) ## GUARDAR DATOS
+    np.save('F_Deterministic_deltar_enlace_Worst.npy',avg_repair) ## GUARDAR DATOS
 
