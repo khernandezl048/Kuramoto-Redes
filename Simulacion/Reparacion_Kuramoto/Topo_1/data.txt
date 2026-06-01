@@ -1,3 +1,303 @@
 nohup: ignoring input
 
---- Tiempo total: 0.01 minutos ---
+ --- Simulación 10/1000 lista. ---
+--- Tiempo parcial: 0.25 minutos ---
+
+ --- Simulación 20/1000 lista. ---
+--- Tiempo parcial: 0.50 minutos ---
+
+ --- Simulación 30/1000 lista. ---
+--- Tiempo parcial: 0.75 minutos ---
+
+ --- Simulación 40/1000 lista. ---
+--- Tiempo parcial: 1.00 minutos ---
+
+ --- Simulación 50/1000 lista. ---
+--- Tiempo parcial: 1.25 minutos ---
+
+ --- Simulación 60/1000 lista. ---
+--- Tiempo parcial: 1.50 minutos ---
+
+ --- Simulación 70/1000 lista. ---
+--- Tiempo parcial: 1.75 minutos ---
+
+ --- Simulación 80/1000 lista. ---
+--- Tiempo parcial: 2.00 minutos ---
+
+ --- Simulación 90/1000 lista. ---
+--- Tiempo parcial: 2.25 minutos ---
+
+ --- Simulación 100/1000 lista. ---
+--- Tiempo parcial: 2.50 minutos ---
+
+ --- Simulación 110/1000 lista. ---
+--- Tiempo parcial: 2.75 minutos ---
+
+ --- Simulación 120/1000 lista. ---
+--- Tiempo parcial: 3.00 minutos ---
+
+ --- Simulación 130/1000 lista. ---
+--- Tiempo parcial: 3.25 minutos ---
+
+ --- Simulación 140/1000 lista. ---
+--- Tiempo parcial: 3.50 minutos ---
+
+ --- Simulación 150/1000 lista. ---
+--- Tiempo parcial: 3.75 minutos ---
+
+ --- Simulación 160/1000 lista. ---
+--- Tiempo parcial: 3.99 minutos ---
+
+ --- Simulación 170/1000 lista. ---
+--- Tiempo parcial: 4.24 minutos ---
+
+ --- Simulación 180/1000 lista. ---
+--- Tiempo parcial: 4.49 minutos ---
+
+ --- Simulación 190/1000 lista. ---
+--- Tiempo parcial: 4.74 minutos ---
+
+ --- Simulación 200/1000 lista. ---
+--- Tiempo parcial: 4.99 minutos ---
+
+ --- Simulación 210/1000 lista. ---
+--- Tiempo parcial: 5.24 minutos ---
+
+ --- Simulación 220/1000 lista. ---
+--- Tiempo parcial: 5.49 minutos ---
+
+ --- Simulación 230/1000 lista. ---
+--- Tiempo parcial: 5.74 minutos ---
+
+ --- Simulación 240/1000 lista. ---
+--- Tiempo parcial: 5.99 minutos ---
+
+ --- Simulación 250/1000 lista. ---
+--- Tiempo parcial: 6.24 minutos ---
+
+ --- Simulación 260/1000 lista. ---
+--- Tiempo parcial: 6.49 minutos ---
+
+ --- Simulación 270/1000 lista. ---
+--- Tiempo parcial: 6.74 minutos ---
+
+ --- Simulación 280/1000 lista. ---
+--- Tiempo parcial: 6.99 minutos ---
+
+ --- Simulación 290/1000 lista. ---
+--- Tiempo parcial: 7.24 minutos ---
+
+ --- Simulación 300/1000 lista. ---
+--- Tiempo parcial: 7.49 minutos ---
+
+ --- Simulación 310/1000 lista. ---
+--- Tiempo parcial: 7.74 minutos ---
+
+ --- Simulación 320/1000 lista. ---
+--- Tiempo parcial: 7.99 minutos ---
+
+ --- Simulación 330/1000 lista. ---
+--- Tiempo parcial: 8.24 minutos ---
+
+ --- Simulación 340/1000 lista. ---
+--- Tiempo parcial: 8.49 minutos ---
+
+ --- Simulación 350/1000 lista. ---
+--- Tiempo parcial: 8.74 minutos ---
+
+ --- Simulación 360/1000 lista. ---
+--- Tiempo parcial: 8.99 minutos ---
+
+ --- Simulación 370/1000 lista. ---
+--- Tiempo parcial: 9.23 minutos ---
+
+ --- Simulación 380/1000 lista. ---
+--- Tiempo parcial: 9.48 minutos ---
+
+ --- Simulación 390/1000 lista. ---
+--- Tiempo parcial: 9.73 minutos ---
+
+ --- Simulación 400/1000 lista. ---
+--- Tiempo parcial: 9.98 minutos ---
+
+ --- Simulación 410/1000 lista. ---
+--- Tiempo parcial: 10.24 minutos ---
+
+ --- Simulación 420/1000 lista. ---
+--- Tiempo parcial: 10.49 minutos ---
+
+ --- Simulación 430/1000 lista. ---
+--- Tiempo parcial: 10.74 minutos ---
+
+ --- Simulación 440/1000 lista. ---
+--- Tiempo parcial: 10.99 minutos ---
+
+ --- Simulación 450/1000 lista. ---
+--- Tiempo parcial: 11.24 minutos ---
+
+ --- Simulación 460/1000 lista. ---
+--- Tiempo parcial: 11.49 minutos ---
+
+ --- Simulación 470/1000 lista. ---
+--- Tiempo parcial: 11.74 minutos ---
+
+ --- Simulación 480/1000 lista. ---
+--- Tiempo parcial: 11.99 minutos ---
+
+ --- Simulación 490/1000 lista. ---
+--- Tiempo parcial: 12.24 minutos ---
+
+ --- Simulación 500/1000 lista. ---
+--- Tiempo parcial: 12.49 minutos ---
+
+ --- Simulación 510/1000 lista. ---
+--- Tiempo parcial: 12.74 minutos ---
+
+ --- Simulación 520/1000 lista. ---
+--- Tiempo parcial: 12.99 minutos ---
+
+ --- Simulación 530/1000 lista. ---
+--- Tiempo parcial: 13.24 minutos ---
+
+ --- Simulación 540/1000 lista. ---
+--- Tiempo parcial: 13.49 minutos ---
+
+ --- Simulación 550/1000 lista. ---
+--- Tiempo parcial: 13.74 minutos ---
+
+ --- Simulación 560/1000 lista. ---
+--- Tiempo parcial: 13.99 minutos ---
+
+ --- Simulación 570/1000 lista. ---
+--- Tiempo parcial: 14.23 minutos ---
+
+ --- Simulación 580/1000 lista. ---
+--- Tiempo parcial: 14.48 minutos ---
+
+ --- Simulación 590/1000 lista. ---
+--- Tiempo parcial: 14.73 minutos ---
+
+ --- Simulación 600/1000 lista. ---
+--- Tiempo parcial: 14.98 minutos ---
+
+ --- Simulación 610/1000 lista. ---
+--- Tiempo parcial: 15.23 minutos ---
+
+ --- Simulación 620/1000 lista. ---
+--- Tiempo parcial: 15.48 minutos ---
+
+ --- Simulación 630/1000 lista. ---
+--- Tiempo parcial: 15.73 minutos ---
+
+ --- Simulación 640/1000 lista. ---
+--- Tiempo parcial: 15.98 minutos ---
+
+ --- Simulación 650/1000 lista. ---
+--- Tiempo parcial: 16.23 minutos ---
+
+ --- Simulación 660/1000 lista. ---
+--- Tiempo parcial: 16.48 minutos ---
+
+ --- Simulación 670/1000 lista. ---
+--- Tiempo parcial: 16.73 minutos ---
+
+ --- Simulación 680/1000 lista. ---
+--- Tiempo parcial: 16.98 minutos ---
+
+ --- Simulación 690/1000 lista. ---
+--- Tiempo parcial: 17.23 minutos ---
+
+ --- Simulación 700/1000 lista. ---
+--- Tiempo parcial: 17.49 minutos ---
+
+ --- Simulación 710/1000 lista. ---
+--- Tiempo parcial: 17.74 minutos ---
+
+ --- Simulación 720/1000 lista. ---
+--- Tiempo parcial: 17.98 minutos ---
+
+ --- Simulación 730/1000 lista. ---
+--- Tiempo parcial: 18.23 minutos ---
+
+ --- Simulación 740/1000 lista. ---
+--- Tiempo parcial: 18.48 minutos ---
+
+ --- Simulación 750/1000 lista. ---
+--- Tiempo parcial: 18.73 minutos ---
+
+ --- Simulación 760/1000 lista. ---
+--- Tiempo parcial: 18.98 minutos ---
+
+ --- Simulación 770/1000 lista. ---
+--- Tiempo parcial: 19.23 minutos ---
+
+ --- Simulación 780/1000 lista. ---
+--- Tiempo parcial: 19.48 minutos ---
+
+ --- Simulación 790/1000 lista. ---
+--- Tiempo parcial: 19.73 minutos ---
+
+ --- Simulación 800/1000 lista. ---
+--- Tiempo parcial: 19.98 minutos ---
+
+ --- Simulación 810/1000 lista. ---
+--- Tiempo parcial: 20.23 minutos ---
+
+ --- Simulación 820/1000 lista. ---
+--- Tiempo parcial: 20.48 minutos ---
+
+ --- Simulación 830/1000 lista. ---
+--- Tiempo parcial: 20.73 minutos ---
+
+ --- Simulación 840/1000 lista. ---
+--- Tiempo parcial: 20.98 minutos ---
+
+ --- Simulación 850/1000 lista. ---
+--- Tiempo parcial: 21.23 minutos ---
+
+ --- Simulación 860/1000 lista. ---
+--- Tiempo parcial: 21.48 minutos ---
+
+ --- Simulación 870/1000 lista. ---
+--- Tiempo parcial: 21.73 minutos ---
+
+ --- Simulación 880/1000 lista. ---
+--- Tiempo parcial: 21.97 minutos ---
+
+ --- Simulación 890/1000 lista. ---
+--- Tiempo parcial: 22.22 minutos ---
+
+ --- Simulación 900/1000 lista. ---
+--- Tiempo parcial: 22.47 minutos ---
+
+ --- Simulación 910/1000 lista. ---
+--- Tiempo parcial: 22.72 minutos ---
+
+ --- Simulación 920/1000 lista. ---
+--- Tiempo parcial: 22.97 minutos ---
+
+ --- Simulación 930/1000 lista. ---
+--- Tiempo parcial: 23.22 minutos ---
+
+ --- Simulación 940/1000 lista. ---
+--- Tiempo parcial: 23.47 minutos ---
+
+ --- Simulación 950/1000 lista. ---
+--- Tiempo parcial: 23.72 minutos ---
+
+ --- Simulación 960/1000 lista. ---
+--- Tiempo parcial: 23.97 minutos ---
+
+ --- Simulación 970/1000 lista. ---
+--- Tiempo parcial: 24.22 minutos ---
+
+ --- Simulación 980/1000 lista. ---
+--- Tiempo parcial: 24.47 minutos ---
+
+ --- Simulación 990/1000 lista. ---
+--- Tiempo parcial: 24.72 minutos ---
+
+ --- Simulación 1000/1000 lista. ---
+--- Tiempo parcial: 24.97 minutos ---
+
+--- Tiempo total: 24.97 minutos ---
