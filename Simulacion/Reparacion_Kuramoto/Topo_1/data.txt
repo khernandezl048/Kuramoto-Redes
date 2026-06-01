@@ -1,0 +1,3 @@
+nohup: ignoring input
+
+--- Tiempo total: 0.01 minutos ---
