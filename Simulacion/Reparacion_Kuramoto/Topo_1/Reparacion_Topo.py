@@ -94,7 +94,7 @@ Omega_damage_list = [Omega_damage_array[i] for i in range(Omega_damage_array.sha
 A = np.load('../A_origin.npy')
 
 # ---------------------------------------- SIMULACION ----------------------------------------
-T_repair = 25000
+T_repair = 30000
 delta_r = 0.01
 N_com = 10
 
