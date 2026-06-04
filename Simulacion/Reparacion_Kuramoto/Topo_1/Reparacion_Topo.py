@@ -45,10 +45,10 @@ def _seleccionar_enlace_inter(Omega_matrix, N_com=10):
     if np.any(mask_inter):
         edges_inter = edges_reparables[mask_inter]
         Omega_inter = Omega_reparables[mask_inter]
-        idx = np.argmin(Omega_inter)
+        idx = np.argmax(Omega_inter)
         return edges_inter[idx]
     else:
-        idx = np.argmin(Omega_reparables)
+        idx = np.argmax(Omega_reparables)
         return edges_reparables[idx]
 
 
@@ -78,8 +78,7 @@ def Simulacion_repair_inter_first(A, Omega_damage, T_repair, delta_r, N_com=10):
                 break
 
             i, j = enlace_actual
-            nuevo_valor = min(Omega[i, j] + delta_r, 1.0)
-            Omega[i, j] = nuevo_valor
+            Omega[i, j] = min(Omega[i, j] + delta_r, 1.0)
 
             if Omega[i, j] >= 1.0:
                 enlace_actual = _seleccionar_enlace_inter(Omega, N_com)
@@ -93,23 +92,38 @@ Omega_damage_list = [Omega_damage_array[i] for i in range(Omega_damage_array.sha
 A = np.load('../A_origin.npy')
 
 # ---------------------------------------- SIMULACION ----------------------------------------
+
 T_repair = 25000
-delta_r = 0.01
 N_com = 10
 
-avg_repair = np.zeros(T_repair + 1)
+deltas_r = np.linspace(0.01, 0.1, 10)
+
+avg_repair = {d: np.zeros(T_repair + 1) for d in deltas_r}
 
 start_time_total = time.time()
 
-for sim, Omega_damage in enumerate(Omega_damage_list):
-    f_repair, Omega_Ver, _ = Simulacion_repair_inter_first(A, Omega_damage, T_repair, delta_r, N_com=N_com)
-    avg_repair += f_repair
+for sim, Omega_damage in enumerate(Omega_damage_list[0:1]):
+
+    for d in deltas_r:
+
+        f_repair, Omega_Ver, _ = Simulacion_repair_inter_first(
+            A,
+            Omega_damage,
+            T_repair,
+            d,
+            N_com=N_com
+        )
+
+        avg_repair[d] += f_repair
 
     if (sim + 1) % 10 == 0:
-        print(f"\n --- Simulación {sim+1}/{len(Omega_damage_list)} lista. ---")
+        print(f"\n --- Simulación {sim+1}/{len(Omega_damage_list[0:1])} lista. ---")
         print(f"--- Tiempo parcial: {(time.time() - start_time_total)/60:.2f} minutos ---")
 
-avg_repair /= len(Omega_damage_list)
+# Promediar
+for d in deltas_r:
+    avg_repair[d] /= len(Omega_damage_list[0:1])
 
 print(f"\n--- Tiempo total: {(time.time() - start_time_total)/60:.2f} minutos ---")
-np.save('F_inter_first_worst.npy', avg_repair)
+
+np.save('F_inter_first_best_1.npy', avg_repair)
