@@ -3,7 +3,6 @@ import networkx as nx
 import time
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
-from numba import njit
 from scipy.stats import gaussian_kde
 from scipy.linalg import eigvals
 from scipy.linalg import expm
@@ -150,7 +149,7 @@ if (Tipo_Simulacion=="betas"):
     np.save('F_Estocastica_betas.npy',avg_repair) ## GUARDAR DATOS
 
 elif (Tipo_Simulacion=="delta_r"):
-    beta = -1
+    beta = 2
     deltas_r = np.array([0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1])
 
     # --- ACUMULADORES ---
@@ -174,4 +173,4 @@ elif (Tipo_Simulacion=="delta_r"):
 
     print(f"\n--- Tiempo total: {(time.time() - start_time_total)/60:.2f} minutos ---")
 
-    np.save('F_Estocastica_deltas.npy',avg_repair) ## GUARDAR DATOS
+    np.save('F_Estocastica_deltas_BETA2.npy',avg_repair) ## GUARDAR DATOS
